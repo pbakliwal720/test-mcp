@@ -1,0 +1,32 @@
+name: Deploy to Stage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Stage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          VALUE_TO_ENCODE: ${{ secrets.VALUE_TO_ENCODE }}
+        run: npm run build
+
+      - name: Deploy to Stage
+        env:
+          VALUE_TO_ENCODE: ${{ secrets.VALUE_TO_ENCODE }}
+        run: npm run deploy:stage
