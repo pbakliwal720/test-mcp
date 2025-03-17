@@ -1,0 +1,14 @@
+{
+  "name": "test-mcp",
+  "version": "1.0.0",
+  "description": "Test repository for MCP workflow testing",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Building...'",
+    "deploy:stage": "echo 'Deploying to stage...'",
+    "deploy:prod": "echo 'Deploying to production...'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
