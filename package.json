@@ -1,14 +1,28 @@
 {
   "name": "test-mcp",
   "version": "1.0.0",
-  "description": "Test repository for MCP workflow testing",
-  "main": "index.js",
+  "description": "Test repository for MCP workflow testing with browser tools",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "build": "echo 'Building...'",
     "deploy:stage": "echo 'Deploying to stage...'",
-    "deploy:prod": "echo 'Deploying to production...'"
+    "deploy:prod": "echo 'Deploying to production...'",
+    "test": "jest"
   },
-  "keywords": [],
+  "keywords": ["mcp", "browser-tools", "proxy"],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "http-proxy-middleware": "^2.0.6",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4"
+  }
 }
